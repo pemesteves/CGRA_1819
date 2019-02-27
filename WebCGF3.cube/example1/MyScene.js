@@ -28,6 +28,8 @@ class MyScene extends CGFscene {
         this.triangleBig = new MyTriangleBig(this);
         this.tangram = new MyTangram(this);
 
+        this.unitCube = new MyUnitCube(this);
+
         //Objects connected to MyInterface
         this.displayAxis = true;
         this.displayDiamond = false;
@@ -77,29 +79,14 @@ class MyScene extends CGFscene {
 
 
         // ---- BEGIN Primitive drawing section
-        
-        if(this.displayDiamond){
-            this.diamond.display();
-        }
-
-        if(this.displayTriangle){
-            this.triangle.display();
-        }
-        
-        if(this.displayParallelogram){
-            this.parallelogram.display();
-        }
-        
-        if(this.displaySmallTriangle){
-            this.triangleSmall.display();
-        }
-
-        if(this.displayBigTriangle){
-        this.triangleBig.display();
-        }
+        this.rotate(-Math.PI/2, 1, 0, 0);
         
         this.tangram.display();
-        
+        this.pushMatrix();
+        this.translate(0, 0, -0.5);
+        this.unitCube.display();
+        this.popMatrix();
+
         // ---- END Primitive drawing section
     }
 }
