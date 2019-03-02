@@ -9,16 +9,10 @@ class MyTangram extends CGFobject {
 		this.initBuffers();
 	}
 	initBuffers() {
-		this.vertices = [
-			-1, -1, 0,	//0
-			1, -1, 0,	//1
-			-1, 1, 0	//2
-		];
+		this.vertices = [];
 
 		//Counter-clockwise reference of vertices
-		this.indices = [
-			0, 1, 2
-		];
+		this.indices = [];
 		this.primitiveType = this.scene.gl.TRIANGLES;
 		this.initGLBuffers();
 	}
