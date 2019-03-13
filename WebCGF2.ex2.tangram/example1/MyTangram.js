@@ -7,6 +7,11 @@ class MyTangram extends CGFobject {
 	constructor(scene) {
 		super(scene);
 		this.initBuffers();
+		this.diamond = new MyDiamond(this);
+        this.triangle = new MyTriangle(this);
+        this.parallelogram = new MyParallelogram(this);
+        this.triangleSmall = new MyTriangleSmall(this);
+        this.triangleBig = new MyTriangleBig(this);
 	}
 	initBuffers() {
 		this.vertices = [];
@@ -30,7 +35,7 @@ class MyTangram extends CGFobject {
         //Draw Diamond
         this.scene.pushMatrix();
         this.scene.multMatrix(m);
-        this.scene.diamond.display();
+        this.diamond.display();
         this.scene.popMatrix();
 
         //Draw first big triangle
@@ -38,7 +43,7 @@ class MyTangram extends CGFobject {
         this.scene.translate(0, 0.5, 0);
         this.scene.pushMatrix();
         this.scene.rotate(Math.PI, 0, 0, 1);
-        this.scene.triangleBig.display();
+        this.triangleBig.display();
         this.scene.popMatrix();
         this.scene.popMatrix();
 
