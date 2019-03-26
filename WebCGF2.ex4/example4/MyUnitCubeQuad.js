@@ -51,6 +51,8 @@ class MyUnitCubeQuad extends CGFobject {
 		
 		//Applying Side Material
 		this.side_material.apply();
+		this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
+
 
 		//Front Face
 		this.scene.pushMatrix();
@@ -81,6 +83,8 @@ class MyUnitCubeQuad extends CGFobject {
 		
 		//Applying Top Material
 		this.top_material.apply();
+		this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
+
 
 		//Top Face
 		this.scene.pushMatrix();
@@ -91,6 +95,8 @@ class MyUnitCubeQuad extends CGFobject {
 
 		//Applying Bottom Material
 		this.bottom_material.apply();
+		this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
+
 
 		//Bottom Face
 		this.scene.pushMatrix();
