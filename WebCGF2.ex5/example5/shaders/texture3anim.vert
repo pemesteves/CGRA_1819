@@ -14,7 +14,8 @@ uniform sampler2D uSampler2;
 uniform float normScale;
 
 void main() {
-	vec3 offset=vec3(0.0,0.0,0.0);
+	vec3 offset=vec3(sin(timeFactor),0.0,0.0);
+	offset *= vec3(normScale, 1.0, 1.0);
 	
 	vTextureCoord = aTextureCoord;
 
