@@ -80,6 +80,10 @@ class ShaderScene extends CGFscene {
 		this.testShaders[5].setUniformsValues({ uSampler2: 1 });
 		this.testShaders[6].setUniformsValues({ uSampler2: 1 });
 		this.testShaders[6].setUniformsValues({ timeFactor: 0 });
+		this.testShaders[11].setUniformsValues({ tex: 1});
+		this.testShaders[11].setUniformsValues({ timeFactor: 0});
+		this.testShaders[11].setUniformsValues({ uSampler2: 1 });
+		this.testShaders[11].setUniformsValues({ uSampler2: 1 });
 
 
 		// Shaders interface variables
@@ -176,9 +180,14 @@ class ShaderScene extends CGFscene {
 
 	// called periodically (as per setUpdatePeriod() in init())
 	update(t) {
-		// only shader 6 is using time factor
-		if (this.selectedExampleShader == 6)
+		// only shader 6 and 11 are using time factor
+		if (this.selectedExampleShader == 6){
 			this.testShaders[6].setUniformsValues({ timeFactor: t / 100 % 1000 });
+		}
+		else if(this.selectedExampleShader == 11){
+			this.testShaders[11].setUniformsValues({ timeFactor: t / 100 % 1000 });
+		}
+
 	}
 
 	// main display function
