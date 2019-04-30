@@ -13,8 +13,6 @@ uniform float normScale;
 varying vec2 vTextureCoord;
 
 void main() {
-	vec2 newCoords = aTextureCoord;
-
 	vec4 color = texture2D(tex, aTextureCoord);
 
 	color *= vec4(1.0, sin(timeFactor), 1.0, 1.0);
